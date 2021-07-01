@@ -17,7 +17,6 @@ public class Home_Screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__screen);
-
         pager = findViewById(R.id.pager);
         viewPager = new ViewPager(getSupportFragmentManager() , 1);
         pager.setAdapter(viewPager);
