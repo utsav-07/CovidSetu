@@ -84,6 +84,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:id="@+id/sos_alert"
+                    android:onClick="sos_alert"
                     android:gravity="center">
 
 

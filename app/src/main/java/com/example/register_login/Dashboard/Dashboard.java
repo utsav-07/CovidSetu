@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.register_login.MainActivity2;
+import com.example.register_login.MainActivity3;
 import com.example.register_login.R;
 
 public class Dashboard extends AppCompatActivity {
@@ -21,5 +22,11 @@ public class Dashboard extends AppCompatActivity {
         //TODO: move to new Intent
         Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
         startActivity(intent);
+    }
+
+    public void sos_alert(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
+        startActivity(intent);
+
     }
 }
