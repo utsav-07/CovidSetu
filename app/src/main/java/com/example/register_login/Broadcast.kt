@@ -24,10 +24,16 @@ class Broadcast : AppCompatActivity() {
         broadCastBtn.setOnClickListener {
             val title = tit.text.toString()
             val message = msg.text.toString()
-            Log.d("DEB","$title"+" "+"$message");
+            //TODO:work to be done
+            val mob:String="9258441169"
+            val name:String="Ajay Singh"
+            val latitude:Double=1.043.toDouble()
+            val longitude:Double=3.44.toDouble()
+
             if(title.isNotEmpty()&&message.isNotEmpty())
             {
-                pushNotification(NotificationData(title, message), Topic).also {
+                pushNotification(NotificationData(title,message,mob,name,latitude,longitude), Topic).also {
+                    Log.d("DEB","$title"+" "+"$mob")
                     sendNotification(it)
                 }
             }
