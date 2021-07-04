@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etEmail,etPassword;
     private String email,password;
+    private ProgressBar spinner;
    // private String URL = "http://192.168.43.165/Login_Register/login.php";
     private String URL = "https://hippocratic-dabs.000webhostapp.com/login.php";
 
@@ -37,9 +39,12 @@ public class MainActivity extends AppCompatActivity {
         email = password = "";
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
     }
 
     public void login(View view){
+        spinner.setVisibility(View.VISIBLE);
         email = etEmail.getText().toString().trim();
         password = etPassword.getText().toString().trim();
         if(!email.equals("") && !password.equals("")){
@@ -47,16 +52,19 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("success")) {
+                        spinner.setVisibility(View.GONE);
                         Intent intent = new Intent(MainActivity.this, Dashboard.class);
                         startActivity(intent);
                         finish();
                     } else if (response.equals("failuer")) {
+                        spinner.setVisibility(View.GONE);
                         Toast.makeText(MainActivity.this, "Invalid Login Id/PAssword", Toast.LENGTH_SHORT).show();
                     }
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
+                    spinner.setVisibility(View.GONE);
                     Toast.makeText(MainActivity.this, error.toString().trim(), Toast.LENGTH_SHORT).show();
                 }
             }){

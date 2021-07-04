@@ -47,6 +47,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="login"/>
 
+
     <EditText
         android:id="@+id/etName"
         android:layout_width="350dp"
