@@ -8,6 +8,7 @@ import android.app.PendingIntent.FLAG_ONE_SHOT
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -24,6 +25,13 @@ class FirebaseService : FirebaseMessagingService(){
         val notificationID = Random.nextInt()
          intent.putExtra("title",message.data["title"])
          intent.putExtra("msg",message.data["message"])
+
+
+        intent.putExtra("name",message.data["name"])
+        intent.putExtra("latitude",message.data["latitude"])
+        intent.putExtra("longitude",message.data["longitude"])
+        intent.putExtra("mob",message.data["mob"])
+        Log.d("Firebase","${message.data["mob"]}");
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
         {
             createNotificationChannel(notificationManager)
