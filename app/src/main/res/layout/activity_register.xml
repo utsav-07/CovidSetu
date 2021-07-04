@@ -96,6 +96,21 @@
         android:inputType="textPassword"
         android:hint="Password"/>
 
+        <EditText
+            android:id="@+id/etnumbr"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:inputType="number"
+
+            android:hint="Phone Number"/>
+
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="350dp"

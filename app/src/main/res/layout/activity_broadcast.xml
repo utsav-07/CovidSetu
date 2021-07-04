@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="50dp"
-    android:layout_height="580dp"
+
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/broadcast"
+    android:background="@color/colorGrey"
 
     tools:context=".Broadcast">
     <TextView
@@ -49,6 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
+            android:textColorHint="@color/colorWhite"
+            android:textColor="@color/white"
             android:paddingStart="8dp"
             android:textStyle="bold"
             android:id="@+id/edTitleTxt"
@@ -83,8 +85,10 @@
             android:hint="Enter your message"
             android:id="@+id/edtxtMsg"
             android:lines="3"
+            android:textColorHint="@color/colorWhite"
             android:gravity="start"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:textSize="18sp" />

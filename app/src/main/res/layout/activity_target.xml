@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@color/colorGrey"
     tools:context=".target">
     <TextView
         android:paddingLeft="20dp"
@@ -17,6 +18,7 @@
         android:textSize="24sp"/>
     <TextView
         android:hint="Title"
+        android:textColor="@color/colorWhite"
         android:paddingLeft="30dp"
         android:textSize="22sp"
         android:layout_marginTop="20dp"
@@ -36,6 +38,7 @@
         android:paddingLeft="30dp"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Description"
@@ -46,6 +49,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
         android:hint="Phone"
         android:id="@+id/mobile"/>
     <TextView
@@ -55,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
+        android:textColor="@color/colorWhite"
         android:id="@+id/client_name"/>
     <TextView
         android:paddingLeft="30dp"
@@ -63,6 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Location"
+        android:textColor="@color/colorWhite"
         android:id="@+id/location"/>
 
 </LinearLayout>
