@@ -11,10 +11,9 @@ class target : AppCompatActivity() {
         setContentView(R.layout.activity_target)
         var x : String? = intent.getStringExtra("title")
         var y : String? = intent.getStringExtra("msg")
-
         var name:String? = intent.getStringExtra("name")
-        var longitude:String? = intent.getStringExtra("longitude")
-        var latitude:String? = intent.getStringExtra("latitude")
+        var area:String? = intent.getStringExtra("area")
+
         var mob:String? = intent.getStringExtra("mob")
 
         val textTitle = findViewById<TextView>(R.id.tvTitle)
@@ -24,9 +23,9 @@ class target : AppCompatActivity() {
         val txtloc= findViewById<TextView>(R.id.location)
         textTitle.text= x.toString()
         textDescp.text= y.toString()
-        txtloc.text=latitude.toString()+" "+longitude.toString()
+        txtloc.text=area.toString()
         textName.text=name.toString();
         textPhone.text=mob.toString();
-        Log.d("Target","$mob");
+        Log.d("Target","$area");
     }
 }

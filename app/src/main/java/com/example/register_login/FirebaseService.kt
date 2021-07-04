@@ -28,8 +28,8 @@ class FirebaseService : FirebaseMessagingService(){
 
 
         intent.putExtra("name",message.data["name"])
-        intent.putExtra("latitude",message.data["latitude"])
-        intent.putExtra("longitude",message.data["longitude"])
+        intent.putExtra("area",message.data["area"])
+
         intent.putExtra("mob",message.data["mob"])
         Log.d("Firebase","${message.data["mob"]}");
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
