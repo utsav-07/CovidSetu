@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_height="580dp"
     android:orientation="vertical"
+    android:background="@drawable/broadcast"
+
     tools:context=".Broadcast">
     <TextView
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textStyle="bold"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="4dp"
         android:text="Broadcast"
@@ -27,10 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="76dp"
+        android:textStyle="bold"
         android:layout_marginBottom="4dp"
         android:text="Broadcast Title"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
+        android:textColor="@color/teal_700"
+        android:textSize="20sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -46,6 +50,7 @@
             android:layout_height="wrap_content"
             android:hint="Title"
             android:paddingStart="8dp"
+            android:textStyle="bold"
             android:id="@+id/edTitleTxt"
             android:inputType="textCapWords"
             android:paddingEnd="8dp"
@@ -58,8 +63,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
         android:text="What is to be done?"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
+        android:textStyle="bold"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -78,6 +84,7 @@
             android:id="@+id/edtxtMsg"
             android:lines="3"
             android:gravity="start"
+            android:textStyle="bold"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:textSize="18sp" />
@@ -87,9 +94,11 @@
     <Button
         android:text="Broadcast"
         android:id="@+id/btnBroadCast"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:textStyle="bold"
         android:layout_gravity="center"
         app:cornerRadius="25dp"
         android:layout_width="wrap_content"

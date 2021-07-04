@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,9 +25,13 @@ import java.util.Map;
 
 public class    Register extends AppCompatActivity {
 
+
+    
+
     private EditText etName , etEmail , etPassword , etReenterPassword;
     private TextView tvStatus;
     private Button btnRegister;
+
    // private String URL = "http://192.168.43.165/Login_Register/register.php";
    private String URL = "https://hippocratic-dabs.000webhostapp.com/register.php";
     private String name,email,password,reenterPassword;
@@ -43,11 +48,13 @@ public class    Register extends AppCompatActivity {
         btnRegister = findViewById(R.id.button);
 
 
+
         name = email = password = reenterPassword = "";
 
     }
 
     public void save(View view){
+       // spinner.setVisibility(View.VISIBLE);
         Toast.makeText(getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
         name = etName.getText().toString().trim();
         email = etEmail.getText().toString().trim();
@@ -63,7 +70,9 @@ public class    Register extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("success")) {
+
                        tvStatus.setText("Successfully registered .");
+
                        btnRegister.setClickable(false);
                     } else if (response.equals("failuer")) {
                         tvStatus.setText("something went wrong!");
@@ -83,6 +92,7 @@ public class    Register extends AppCompatActivity {
                     data.put("name", name);
                     data.put("email", email);
                     data.put("password", password);
+                    //spinner.setVisibility(View.GONE);
                     tvStatus.setText("Successfully registered . go to login page");
                     btnRegister.setClickable(false);
                     return data;
