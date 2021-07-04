@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.register_login.R;
+import com.example.register_login.dataStorage.SessionManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,19 +27,21 @@ import java.util.Map;
 public class    Register extends AppCompatActivity {
 
 
-    
-
-    private EditText etName , etEmail , etPassword , etReenterPassword;
+    private EditText etName , etEmail , etPassword , etReenterPassword , etnumber;
     private TextView tvStatus;
     private Button btnRegister;
 
+    SessionManager session;
+
    // private String URL = "http://192.168.43.165/Login_Register/register.php";
    private String URL = "https://hippocratic-dabs.000webhostapp.com/register.php";
-    private String name,email,password,reenterPassword;
+    private String name,email,password,reenterPassword, number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        session = new SessionManager(getApplicationContext());
         setContentView(R.layout.activity_register);
         etName = findViewById(R.id.etName);
          etEmail= findViewById(R.id.etEmail);
@@ -46,20 +49,23 @@ public class    Register extends AppCompatActivity {
         etReenterPassword = findViewById(R.id.etReenterPassword);
         tvStatus = findViewById(R.id.tvStatus);
         btnRegister = findViewById(R.id.button);
+    etnumber = findViewById(R.id.etnumbr);
 
 
-
-        name = email = password = reenterPassword = "";
+        name = email = password = reenterPassword =  number = "";
 
     }
 
     public void save(View view){
        // spinner.setVisibility(View.VISIBLE);
+        //session.clerData();
         Toast.makeText(getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
         name = etName.getText().toString().trim();
         email = etEmail.getText().toString().trim();
         password = etPassword.getText().toString().trim();
         reenterPassword = etReenterPassword.getText().toString().trim();
+        number = etnumber.getText().toString().trim();
+        session.insertdata(name , number);
         if(!password.equals(reenterPassword)){
             Toast.makeText(this, "Password Mismatch", Toast.LENGTH_SHORT).show();
         }
