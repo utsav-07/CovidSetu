@@ -35,7 +35,7 @@ public class    Register extends AppCompatActivity {
 
    // private String URL = "http://192.168.43.165/Login_Register/register.php";
    private String URL = "https://hippocratic-dabs.000webhostapp.com/register.php";
-    private String name,email,password,reenterPassword, number;
+    private String name="Suraj",email,password,reenterPassword, number="1234354";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

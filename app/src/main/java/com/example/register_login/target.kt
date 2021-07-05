@@ -29,10 +29,9 @@ class target : AppCompatActivity() {
         var x : String? = intent.getStringExtra("title")
         var y : String? = intent.getStringExtra("msg")
         var name:String? = intent.getStringExtra("name")
-        var area:String? = intent.getStringExtra("area")
-
+        var latitude:String? = intent.getStringExtra("latitude")
+        var longitude:String? = intent.getStringExtra("longitude")
         var mob:String? = intent.getStringExtra("mob")
-
         val textTitle = findViewById<TextView>(R.id.tvTitle)
         val textDescp = findViewById<TextView>(R.id.tvDescription)
         val textPhone = findViewById<TextView>(R.id.mobile)
@@ -40,9 +39,9 @@ class target : AppCompatActivity() {
         val txtloc= findViewById<TextView>(R.id.location)
         textTitle.text= x.toString()
         textDescp.text= y.toString()
-        txtloc.text=area.toString()
+        txtloc.text=latitude+" "+longitude
         textName.text=name.toString();
         textPhone.text=mob.toString();
-        Log.d("Target","$area");
+        Log.d("Target","$latitude");
     }
 }

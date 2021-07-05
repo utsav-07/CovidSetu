@@ -25,11 +25,9 @@ class FirebaseService : FirebaseMessagingService(){
         val notificationID = Random.nextInt()
          intent.putExtra("title",message.data["title"])
          intent.putExtra("msg",message.data["message"])
-
-
         intent.putExtra("name",message.data["name"])
-        intent.putExtra("area",message.data["area"])
-
+        intent.putExtra("latitude",message.data["latitude"])
+        intent.putExtra("longitude",message.data["longitude"])
         intent.putExtra("mob",message.data["mob"])
         Log.d("Firebase","${message.data["mob"]}");
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)

@@ -1,5 +1,6 @@
 package com.example.register_login
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Geocoder
@@ -24,6 +25,7 @@ import java.util.jar.Manifest
 
 class Broadcast : AppCompatActivity() {
 lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+var area:String = "abs"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,43 +40,132 @@ lateinit var fusedLocationProviderClient: FusedLocationProviderClient
       fusedLocationProviderClient=LocationServices.getFusedLocationProviderClient(this)
 
         broadCastBtn.setOnClickListener {
-           val area:String= fetchLocation()
-            val title = tit.text.toString()
-            val message = msg.text.toString()
-            //TODO:work to be done
-            Log.d("BroadCast",area);
-            val mob:String="9258441169"
-            val name:String="Ajay Singh"
-            if(title.isNotEmpty()&&message.isNotEmpty())
+
+            if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
             {
-                pushNotification(NotificationData(title,message,mob,name,area), Topic).also {
-                 //   Log.d("DEB","$title"+" "+"${area}")
-                    sendNotification(it)
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION),1)
+            }
+            else
+            {//getgeoLocation()
+                var randomLoc:String ="area"
+                fusedLocationProviderClient.lastLocation?.addOnSuccessListener {
+
+                    if(it==null)
+                    {
+                        Toast.makeText(this,"Sorry cant't get location",Toast.LENGTH_SHORT);
+                    }
+                    else it.apply{
+                        val lat = it.latitude;
+                        val longi= it.longitude;
+                        area=""+latitude+" "+longitude
+                        val title = tit.text.toString()
+                        val message = msg.text.toString()
+                        //TODO:work to be done
+                        Log.d("BroadCast",area);
+                        val mob:String="9258441169"
+                        val name:String="Ajay Singh"
+                        val latitude:String = it.latitude.toString()
+                        val longitude:String=it.longitude.toString()
+
+                        if(title.isNotEmpty()&&message.isNotEmpty()&&area.isNotEmpty())
+                        {
+                            pushNotification(NotificationData(title,message,mob,name,latitude,longitude), Topic).also {
+                                Log.d("DEB","$title"+" "+"$latitude")
+                                sendNotification(it)
+                            }
+                        }
+
+                    }
+
                 }
+
             }
 
         }
     }
 
-    private fun fetchLocation():String {
-        var area:String="abc"
-        val task =fusedLocationProviderClient.lastLocation
-        if(ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED&&ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
-        {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),101)
+//    private fun checkPermissions() {
+//
+//        if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
+//        {
+//            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION),1)
+//        }
+//        else
+//        {
+//           // getlocation()
+//
+//        }
 
-        }
-        task.addOnSuccessListener {
-            if(it!=null)
-            {
-                area=it.latitude.toString()+" "+it.longitude.toString();
-            }
-        }
-        return area
-    }
+//    private fun fetchLocation():Location{
+//      //  var area:String="abc"
+//        var location:Location
+//        val task =fusedLocationProviderClient.lastLocation
+//        if(ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED&&ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
+//        {
+//            ActivityCompat.requestPermissions(this,
+//                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),101)
+//
+//        }
+//        task.addOnSuccessListener {
+//            if(it!=null)
+//            {
+//                area=it.latitude.toString()+" "+it.longitude.toString();
+//
+//            }
+//            else
+//            {
+//
+//            }
+//        }
 
 
+
+//    @SuppressLint("MissingPermission")
+//    private fun getlocation() :String
+//    {
+//       var randomLoc:String ="area"
+//        fusedLocationProviderClient.lastLocation?.addOnSuccessListener {
+//
+//      if(it==null)
+//      {
+//           Toast.makeText(this,"Sorry cant't get location",Toast.LENGTH_SHORT);
+//      }
+//      else it.apply{
+//           val latitude = it.latitude;
+//          val longitude= it.longitude;
+//          area=""+latitude+" "+longitude
+//          }
+//
+//     }
+//        if(area.isNotEmpty())
+//        return area
+//        return randomLoc
+//    }
+
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<out String>,
+//        grantResults: IntArray
+//    ) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//        if(requestCode==1)
+//        {
+//            if(grantResults.isNotEmpty()&&grantResults[0]==PackageManager.PERMISSION_GRANTED)
+//            {
+//                if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)==PackageManager.PERMISSION_GRANTED)
+//                {
+//                    Toast.makeText(this,"Permission Granted",Toast.LENGTH_SHORT).show()
+//                    getlocation()
+//                }
+//                else
+//                {
+//                    Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT);
+//                }
+//
+//            }
+//
+//        }
+//    }
 
 
     private fun sendNotification(notification:pushNotification)= CoroutineScope(Dispatchers.IO).launch {
