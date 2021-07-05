@@ -70,5 +70,13 @@
         android:hint="Location"
         android:textColor="@color/colorWhite"
         android:id="@+id/location"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+          android:onClick="locOnMap"
+        android:background="@color/teal_700"
+        android:text="Locate on Map"/>
 
 </LinearLayout>

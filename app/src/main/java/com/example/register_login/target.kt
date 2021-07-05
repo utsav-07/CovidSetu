@@ -1,7 +1,9 @@
 package com.example.register_login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.register_login.dataStorage.SessionManager
@@ -11,7 +13,8 @@ class target : AppCompatActivity() {
 
     var name = ""
     var number:kotlin.String? = ""
-
+    lateinit var longitude:String
+    lateinit var latitude:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,8 +32,8 @@ class target : AppCompatActivity() {
         var x : String? = intent.getStringExtra("title")
         var y : String? = intent.getStringExtra("msg")
         var name:String? = intent.getStringExtra("name")
-        var latitude:String? = intent.getStringExtra("latitude")
-        var longitude:String? = intent.getStringExtra("longitude")
+        latitude = intent.getStringExtra("latitude").toString()
+         longitude= intent.getStringExtra("longitude").toString()
         var mob:String? = intent.getStringExtra("mob")
         val textTitle = findViewById<TextView>(R.id.tvTitle)
         val textDescp = findViewById<TextView>(R.id.tvDescription)
@@ -43,5 +46,14 @@ class target : AppCompatActivity() {
         textName.text=name.toString();
         textPhone.text=mob.toString();
         Log.d("Target","$latitude");
+    }
+
+    fun locOnMap(view: View) {
+        val intent = Intent(this,MapsActivity::class.java)
+      intent.putExtra("latitude",latitude)
+        intent.putExtra("longitude",longitude)
+        Log.d("Target","${latitude}")
+
+        startActivity(intent)
     }
 }
