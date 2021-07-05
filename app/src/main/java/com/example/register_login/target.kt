@@ -1,7 +1,9 @@
 package com.example.register_login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.register_login.dataStorage.SessionManager
@@ -11,7 +13,8 @@ class target : AppCompatActivity() {
 
     var name = ""
     var number:kotlin.String? = ""
-
+    lateinit var longitude:String
+    lateinit var latitude:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,12 +31,10 @@ class target : AppCompatActivity() {
         println(name + number)
         var x : String? = intent.getStringExtra("title")
         var y : String? = intent.getStringExtra("msg")
-
         var name:String? = intent.getStringExtra("name")
-        var longitude:String? = intent.getStringExtra("longitude")
-        var latitude:String? = intent.getStringExtra("latitude")
+        latitude = intent.getStringExtra("latitude").toString()
+         longitude= intent.getStringExtra("longitude").toString()
         var mob:String? = intent.getStringExtra("mob")
-
         val textTitle = findViewById<TextView>(R.id.tvTitle)
         val textDescp = findViewById<TextView>(R.id.tvDescription)
         val textPhone = findViewById<TextView>(R.id.mobile)
@@ -41,9 +42,18 @@ class target : AppCompatActivity() {
         val txtloc= findViewById<TextView>(R.id.location)
         textTitle.text= x.toString()
         textDescp.text= y.toString()
-        txtloc.text=latitude.toString()+" "+longitude.toString()
+        txtloc.text=latitude+" "+longitude
         textName.text=name.toString();
         textPhone.text=mob.toString();
-        Log.d("Target","$mob");
+        Log.d("Target","$latitude");
+    }
+
+    fun locOnMap(view: View) {
+        val intent = Intent(this,MapsActivity::class.java)
+      intent.putExtra("latitude",latitude)
+        intent.putExtra("longitude",longitude)
+        Log.d("Target","${latitude}")
+
+        startActivity(intent)
     }
 }
