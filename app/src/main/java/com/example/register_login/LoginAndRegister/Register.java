@@ -59,7 +59,7 @@ public class    Register extends AppCompatActivity {
     public void save(View view){
        // spinner.setVisibility(View.VISIBLE);
         //session.clerData();
-        Toast.makeText(getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
         name = etName.getText().toString().trim();
         email = etEmail.getText().toString().trim();
         password = etPassword.getText().toString().trim();

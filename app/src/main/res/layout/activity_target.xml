@@ -34,9 +34,10 @@
         >
     <TextView
         android:hint="Title"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:paddingLeft="30dp"
         android:textSize="22sp"
+        android:textColorHint="@color/white"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,6 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Description"
+        android:textColorHint="@color/white"
         android:textStyle="bold"
         android:id="@+id/tvDescription"/>
     <TextView
@@ -83,6 +85,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
         android:hint="Phone"
+        android:textColorHint="@color/white"
         android:textStyle="bold"
         android:id="@+id/mobile"/>
     <TextView
@@ -93,6 +96,7 @@
         android:layout_height="wrap_content"
         android:hint="Name"
         android:textStyle="bold"
+        android:textColorHint="@color/white"
         android:textColor="@color/colorWhite"
         android:id="@+id/client_name"/>
     <TextView
@@ -103,6 +107,7 @@
         android:layout_height="wrap_content"
         android:hint="Location"
         android:textStyle="bold"
+        android:textColorHint="@color/white"
         android:textColor="@color/colorWhite"
         android:id="@+id/location"/>
 
