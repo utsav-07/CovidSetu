@@ -29,8 +29,8 @@ lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 var area:String = "abs"
     var session: SessionManager? = null
 
-    var name = ""
-    var number:kotlin.String? = ""
+    var name = "Suraj"
+    var number:kotlin.String? = "9258441169"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast)
@@ -43,7 +43,7 @@ var area:String = "abs"
 
         // email
         number = user[SessionManager.KEY_NUMBER]
-        if(name.isEmpty()&&number.isNullOrEmpty())
+        if(name.isEmpty())
         {
             name="Suraj"
             number="9258441169"

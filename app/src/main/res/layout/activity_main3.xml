@@ -14,7 +14,7 @@
     <TextView
         android:textStyle="bold"
         android:layout_width="wrap_content"
-        android:fontFamily="@font/italicbold"
+        android:fontFamily="@font/bold"
         android:letterSpacing="0.2"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -31,10 +31,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="40dp"
+         android:textColorHint="#5A20CB"
 
         android:layout_marginBottom="16dp"
-        app:boxStrokeColor="@color/colorWhite"
-        app:hintTextColor="@color/colorWhite">
+        app:boxStrokeColor="#5A20CB"
+        app:hintTextColor="#5A20CB">
 
         <com.google.android.material.textfield.TextInputEditText
 
@@ -42,9 +43,9 @@
             android:layout_width="350dp"
             android:layout_height="45dp"
             android:layout_marginTop="30dp"
-            android:ems="10"
-            android:hint="Enter Your Pincode"
             android:inputType="number"
+            android:hint="Enter Your Pincode"
+
             android:paddingStart="8dp"
 
             android:paddingLeft="20dp"
@@ -73,5 +74,8 @@
 
         android:tint="@color/colorAccent"
         app:rippleColor="@color/colorAccent" />
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_sample3"/>
 </LinearLayout>

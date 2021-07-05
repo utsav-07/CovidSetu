@@ -39,13 +39,13 @@ class target : AppCompatActivity() {
         val textDescp = findViewById<TextView>(R.id.tvDescription)
         val textPhone = findViewById<TextView>(R.id.mobile)
         val textName = findViewById<TextView>(R.id.client_name)
-        val txtloc= findViewById<TextView>(R.id.location)
+
         textTitle.text= x.toString()
         textDescp.text= y.toString()
-        txtloc.text=latitude+" "+longitude
+
         textName.text=name.toString();
         textPhone.text=mob.toString();
-        Log.d("Target","$latitude");
+
     }
 
     fun locOnMap(view: View) {
