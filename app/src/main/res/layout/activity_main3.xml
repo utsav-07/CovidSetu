@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    android:background="@color/colorGrey"
+    android:background="#101612"
     android:layout_gravity="center_horizontal"
 
 
@@ -14,40 +14,53 @@
     <TextView
         android:textStyle="bold"
         android:layout_width="wrap_content"
+        android:fontFamily="@font/italicbold"
+        android:letterSpacing="0.2"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="4dp"
         android:text="Pincode"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/white"
         android:textSize="34sp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleInpLay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:id="@+id/titleInpLay"
-        app:hintTextColor="@color/colorAccent"
-        app:boxStrokeColor="@color/colorAccent"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="16dp">
+
+        android:layout_marginBottom="16dp"
+        app:boxStrokeColor="@color/colorWhite"
+        app:hintTextColor="@color/colorWhite">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
             android:id="@+id/pincode"
-            android:textColor="@color/colorWhite"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
             android:hint="Enter Your Pincode"
-            android:textColorHint="@color/colorWhite"
+            android:inputType="number"
             android:paddingStart="8dp"
-            android:inputType="textCapWords"
+
+            android:paddingLeft="20dp"
             android:paddingEnd="8dp"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textColor="@color/colorWhite"
+            android:textColorHighlight="@color/colorWhite"
+            android:textColorHint="@color/white"
+
+            android:textColorLink="@color/colorWhite"
+            android:textSize="22sp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/doneBtn"
+        android:background="@drawable/button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -55,7 +68,9 @@
         android:layout_marginRight="40dp"
         android:baselineAlignBottom="true"
         android:text="Submit"
-        android:background="@color/colorPrimary"
+
+        android:textColor="@color/colorWhite"
+
         android:tint="@color/colorAccent"
         app:rippleColor="@color/colorAccent" />
 
