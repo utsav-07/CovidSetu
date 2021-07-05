@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="4dp"
-        android:text="Broadcast"
+        android:text="Broadcast SOS"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:shadowColor="#00ccff"
@@ -40,8 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:hintTextColor="@color/colorAccent"
-        app:boxStrokeColor="@color/colorAccent"
+        android:textColorHint="#5A20CB"
+        app:hintTextColor="#5A20CB"
+        app:boxStrokeColor="#5A20CB"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp">
 
@@ -74,8 +75,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:hintTextColor="@color/colorAccent"
-        app:boxStrokeColor="@color/colorAccent"
+        app:hintTextColor="#5A20CB"
+        android:textColorHint="#5A20CB"
+        app:boxStrokeColor="#5A20CB"
         android:layout_marginEnd="16dp"
 
         android:layout_marginBottom="16dp">
@@ -86,7 +88,8 @@
             android:hint="Enter your message"
             android:id="@+id/edtxtMsg"
             android:lines="3"
-            android:textColorHint="@color/colorPrimary"
+
+            android:textColorHint="#5A20CB"
             android:gravity="start"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"

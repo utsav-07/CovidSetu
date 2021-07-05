@@ -11,7 +11,7 @@
         android:id="@+id/stateTV"
         android:text="STATE/UT"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="#CAD5E2"
         android:textStyle="bold"/>
     <TextView
         android:layout_width="0dp"
@@ -23,16 +23,17 @@
         android:id="@+id/cnfTV"
         android:textColor="@color/dark_red"
         android:fontFamily="@font/bold"/>
+
     <TextView
+        android:id="@+id/actTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:fontFamily="@font/bold"
         android:padding="8dp"
-        android:id="@+id/actTV"
         android:text="ACTV"
         android:textAllCaps="true"
-        android:textColor="@color/dark_blue"
-        android:fontFamily="@font/bold"/>
+        android:textColor="#5A20CB" />
 
     <TextView
         android:layout_width="0dp"

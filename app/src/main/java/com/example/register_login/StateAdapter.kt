@@ -32,7 +32,7 @@ class StateAdapter (val list: List<StatewiseItem>):BaseAdapter(){
         cnfTV.text=SpannableDelta("${item.confirmed}\n ↑${item.deltaconfirmed ?: "0"}","#D32F2F",
             item.confirmed?.length?:0)
         Log.d("DELTA","${item.deltaconfirmed}")
-        actTV.text=SpannableDelta("${item.active}\n ↑${item.deltaconfirmed?:"0"}","#D32F2F",
+        actTV.text=SpannableDelta("${item.active}\n ↑${item.deltaconfirmed?:"0"}","#5A20CB",
             item.confirmed?.length?:0)
         decTV.text=SpannableDelta("${item.deaths}\n ↑${item.deltadeaths?:"0"}","#FBC02D",
             item.deaths?.length?:0)
