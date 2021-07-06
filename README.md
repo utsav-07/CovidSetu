@@ -2,6 +2,9 @@
 An app to broadcast SOS for help to users of a particular pincode. Users of that pincode  will recieve an SOS notification with the details of the person who made SOS call
 and users can locate that person on the Google maps as well so that they can help that person. This app will also show its users the real-time stats about covid-19 cases in india. 
 
+Video walk through:
+https://youtu.be/bAdrccZEX4M
+
 ## Libraries used
 <br>
 ->  liquid-swipe
@@ -94,9 +97,7 @@ and users can locate that person on the Google maps as well so that they can hel
  -> Wrote Documentation for the project
     (used kotlin for implementing these features in app)
     
-<a href=shorturl.at/atCW3>
--> APK FILE
-</a>   
+
 
  (chick here)
  
