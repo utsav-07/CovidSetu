@@ -50,9 +50,8 @@
 
             android:paddingLeft="20dp"
             android:paddingEnd="8dp"
-            android:textColor="@color/colorWhite"
+            android:textColor="#F27507"
             android:textColorHighlight="@color/colorWhite"
-            android:textColorHint="@color/white"
 
             android:textColorLink="@color/colorWhite"
             android:textSize="22sp"

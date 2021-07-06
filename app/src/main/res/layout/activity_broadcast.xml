@@ -40,8 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textColorHint="#5A20CB"
-        app:hintTextColor="#5A20CB"
+        android:textColorHint="#F27507"
+        app:hintTextColor="#F27507"
         app:boxStrokeColor="#5A20CB"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp">
@@ -50,8 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/colorPrimary"
+
+            android:textColorHint="#F27507"
+            android:textColor= "#F27507"
             android:paddingStart="8dp"
             android:textStyle="bold"
 
@@ -75,8 +76,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:hintTextColor="#5A20CB"
-        android:textColorHint="#5A20CB"
+        app:hintTextColor="#F27507"
+        android:textColorHint="#F27507"
         app:boxStrokeColor="#5A20CB"
         android:layout_marginEnd="16dp"
 
@@ -89,10 +90,10 @@
             android:id="@+id/edtxtMsg"
             android:lines="3"
 
-            android:textColorHint="#5A20CB"
+            android:textColorHint="#F27507"
             android:gravity="start"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#F27507"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:textSize="18sp" />
