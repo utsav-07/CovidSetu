@@ -9,26 +9,20 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.register_login.dataStorage.SessionManager
 
 class target : AppCompatActivity() {
-    var session: SessionManager? = null
 
-    var name = ""
-    var number:kotlin.String? = ""
     lateinit var longitude:String
     lateinit var latitude:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_target)
-        session = SessionManager(applicationContext)
 
-        val user = session!!.userDetails
-        name = user[SessionManager.KEY_NAME]!!
 
         // email
 
         // email
-        number = user[SessionManager.KEY_NUMBER]
-        println(name + number)
+
+
         var x : String? = intent.getStringExtra("title")
         var y : String? = intent.getStringExtra("msg")
         var name:String? = intent.getStringExtra("name")

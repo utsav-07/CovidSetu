@@ -44,7 +44,9 @@ public class SessionManager {
         // Storing name in pref
         editor.putString(KEY_NAME, name);
 
+
         // Storing email in pref
+
         editor.putString(KEY_NUMBER, number);
 
         // commit changes

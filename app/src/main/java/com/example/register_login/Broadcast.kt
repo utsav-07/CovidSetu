@@ -23,33 +23,36 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
 import java.util.jar.Manifest
+import kotlin.collections.HashMap
 
 class Broadcast : AppCompatActivity() {
 lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 var area:String = "abs"
     var session: SessionManager? = null
 
-    var name = "Suraj"
-    var number:kotlin.String? = "9258441169"
+    var name:String? = "abc"
+    var number:String? = "1234567890"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast)
+
         session = SessionManager(applicationContext)
+        if(session?.userDetails!!.isEmpty()) {
 
-        val user = session!!.userDetails
-        name = user[SessionManager.KEY_NAME]!!
-
-        // email
-
-        // email
-        number = user[SessionManager.KEY_NUMBER]
-        if(name.isEmpty())
+            Toast.makeText(this,"Please Register through new account",Toast.LENGTH_LONG).show()
+        }
+        else
         {
-            name="Suraj"
-            number="9258441169"
+            val user = session!!.userDetails
+            name = user[SessionManager.KEY_NAME]!!
+            number = user[SessionManager.KEY_NUMBER]
         }
 
-    //    println(name + number)
+
+
+
+
+
         var pin: String? = intent.getStringExtra("pin")
         Log.d("MAIN","$pin")
         var Topic = "/topics/$pin"
@@ -64,15 +67,16 @@ var area:String = "abs"
             if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
             {
                 ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION),1)
+                return@setOnClickListener
             }
             else
             {//getgeoLocation()
-                var randomLoc:String ="area"
+
                 fusedLocationProviderClient.lastLocation?.addOnSuccessListener {
 
                     if(it==null)
                     {
-                        Toast.makeText(this,"Sorry cant't get location",Toast.LENGTH_SHORT);
+                        Toast.makeText(this,"Please turn on your Location/GPS from Settings",Toast.LENGTH_LONG).show();
                     }
                     else it.apply{
                         val lat = it.latitude;
@@ -88,7 +92,7 @@ var area:String = "abs"
                         val latitude:String = it.latitude.toString()
                         val longitude:String=it.longitude.toString()
 
-                        if(title.isNotEmpty()&&message.isNotEmpty()&&area.isNotEmpty())
+                        if(title.isNotEmpty()&&message.isNotEmpty()&&latitude.isNotEmpty())
                         {
                             pushNotification(NotificationData(title,message,mob,name,latitude,longitude), Topic).also {
                                 Log.d("DEB","$title"+" "+"$latitude")
