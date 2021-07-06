@@ -76,7 +76,7 @@ var area:String = "abs"
 
                     if(it==null)
                     {
-                        Toast.makeText(this,"Please turn on your Location/GPS from Settings",Toast.LENGTH_LONG).show();
+                        Toast.makeText(this,"Please turn on your Location from Settings and try again",Toast.LENGTH_LONG).show();
                     }
                     else it.apply{
                         val lat = it.latitude;
