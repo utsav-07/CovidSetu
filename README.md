@@ -72,11 +72,27 @@ and users can locate that person on the Google maps as well so that they can hel
  ## Contributions
  
  ### Utsav Sinha
- -> Designed the Login,Register and Dashboard UI for the app using liquid-swip library
- -> Created Login and registration system for the app using PHP
- -> Created Database for in MySql for storing data of users
- -> Hosted database on 000webshost
  
+ -> Designed the Login,Register and Dashboard UI for the app using liquid-swip library
+ <br>
+ -> Created Login and registration system for the app using PHP
+ <br>
+ -> Created Database for in MySql for storing data of users
+ <br>
+ -> Hosted database on 000webshost
+ <br>
+ (used java for impleplement these features in app)
+ 
+ ### Suraj Prasad Soni 
+ -> Designed UI for showing covid-19 real time stats and SOS ALert feature
+ <br>
+ -> used Covid-19 India API to fetch the data
+ <br>
+ -> Used Firebase Cloud messaging to push the notification to all user of particular pincode.
+ <br>
+ -> used coordinates from recived notification data  to locate it on Google maps.
+ <br>
+    (used kotlin for implementing these features in app)
       
 # Screenshots
 ![1slide1](https://user-images.githubusercontent.com/48099786/124544556-ecfbcf00-de44-11eb-8f6d-f2516eb4bb9a.jpeg)
