@@ -1,4 +1,6 @@
 # coronaApp
+An app to broadcast SOS for help to users of a particular pincode. Users of that pincode  will recieve an SOS notification with the details of the person who made SOS call
+and users can locate that person on the Google maps as well so that they can help that person.
 
 # Screenshots
 ![1slide1](https://user-images.githubusercontent.com/48099786/124544556-ecfbcf00-de44-11eb-8f6d-f2516eb4bb9a.jpeg)
