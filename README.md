@@ -91,6 +91,7 @@ and users can locate that person on the Google maps as well so that they can hel
  -> Used Firebase Cloud messaging to push the notification to all user of particular pincode.
  <br>
  -> used coordinates from recived notification data  to locate it on Google maps.
+ -> Wrote Documentation for the project
     (used kotlin for implementing these features in app)
     
 <a href=shorturl.at/atCW3>
