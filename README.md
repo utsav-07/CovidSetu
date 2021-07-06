@@ -33,23 +33,23 @@ and users can locate that person on the Google maps as well so that they can hel
 <br>
 -> Google Firebase - for broadcasting message
 <br>
--> PHP             - for creating user varification API
+-> PHP             - for creating user login and regIstration API
 <br>
--> Mysql           - for creating the database of users
+-> MySql           - for creating the database of users
 <br>
 
 ## How it works
 
 #### Authentication and Registration
 
-  >> for user Authentication and Regestration we have hosted the server on 000webhost and authentication and varification API is created using PHP and Myql is used as database
+  >>  we have hosted the backend(PHP files and MySql) on 000webhost in which authentication and varification API is created using PHP and Myql is    used as database
    Volley is used for making the requests
 <br>
 
 #### Covid-19 India Real-Time Stats
 
 
->> for getting the real-time data we are using Covid-19India API and we are making request through okHttp and converting response json to objects through Gson converter     liberary and then we are displaying the data
+>> for getting the real-time data we are using Covid-19India API and we are making request through okHttp and converting response json to objects through Gson converter liberary and then we are displaying the data.
 
  #### SOS Alert
 
@@ -71,15 +71,15 @@ and users can locate that person on the Google maps as well so that they can hel
  
  ## Contributions
  
- ### Utsav Sinha
+ ### Udit Utsav
  
  -> Designed the Login,Register and Dashboard UI for the app using liquid-swip library
  <br>
- -> Created Login and registration system for the app using PHP
+ -> Created Login and registration API for the app using PHP
  <br>
- -> Created Database for in MySql for storing data of users
+ -> Created Database in MySql for storing data of users
  <br>
- -> Hosted database on 000webshost
+ -> Hosted backend (PHP files and MySql database) on 000webshost
  <br>
  (used java for impleplement these features in app)
  
