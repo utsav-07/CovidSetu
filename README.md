@@ -23,7 +23,7 @@ and users can locate that person on the Google maps as well so that they can hel
 <br>
 -> FusedLocationProvider
 <br>
-<a href=https://github.com/covid19india/api>
+<a href=https://drive.google.com/file/d/1LvXQt4Sew_jComP7-lyKzpNJ4DsRByDh/view?usp>
 -> Covid-19India API
 </a>
 <br>
